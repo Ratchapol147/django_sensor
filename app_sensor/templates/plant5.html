@@ -6,63 +6,61 @@
           <div class="col-sm-12">
           <div class="well">
             <h1>โรงเรือน 5</h1>
-            <h1 id="TitleDate"></h1>
+            <h4 id="TitleDate"></h4>
           </div>
         </div>
           </div>
           <div class="row">
-            <div class="col-sm-12">
-              <div class="well">
-                <h2>Temperature&nbsp;<small>(อุณหภูมิ)</small></h2>
-                <!-- <p>up date : {{ data_TTTT }}</p>
-            {{ Temperature }}
-            {{Temperature_time|safe}} -->
+                                  <div class="col-md-6" >
+                                    <div class="well well-lg">
+                                      <h2>Temperature&nbsp;<small>(อุณหภูมิ)</small></h2>
+                                      <canvas id="myChartTemperature"></canvas>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-3"  >
+                                    <div class="well well-sm">
+                                      <h2>Humidity&nbsp;<small>(ความชื้น)</small></h2>
+                                      <canvas id="myChartHumidity" width="900" height="400"> </canvas>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-3" >
+                                    <div class="well well-sm">
+                                      <h2>EC&nbsp;<small>(การนำไฟฟ้า)</small></h2>
+                                      <canvas id="myChartEC" width="900" height="400"> </canvas>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-3">
+                                  <div class="well well-sm">
+                                    <h2>PH&nbsp;<small>(กรด-ด่าง)</small></h2>
+                                    <canvas id="myChartPH" width="900" height="400"> </canvas>
+                                  </div>
+                                </div>
+                                <div class="col-sm-3">
+                                  <div class="well well-sm">
+                                    <h2>Nitrogen&nbsp;<small>(ไนโตรเจน)</small></h2>
+                                    <canvas id="myChartNitrogen" width="900" height="400"> </canvas>
+                                  </div>
+                                </div>
 
-                <canvas id="myChartTemperature" width="900" height="400">
-                </canvas>
-              </div>
-            </div>
+
+
+
           </div>
-            <div class="row">
-            <div class="col-sm-4">
-              <div class="well">
-                <h2>Humidity&nbsp;<small>(ความชื้น)</small></h2>
-                <canvas id="myChartHumidity" width="900" height="400"> </canvas>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="well">
-                <h2>EC&nbsp;<small>(การนำไฟฟ้า)</small></h2>
-                <canvas id="myChartEC" width="900" height="400"> </canvas>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="well">
-                <h2>PH&nbsp;<small>(กรด-ด่าง)</small></h2>
-                <canvas id="myChartPH" width="900" height="400"> </canvas>
-              </div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-sm-4">
-              <div class="well">
-                <h2>Nitrogen&nbsp;<small>(ไนโตรเจน)</small></h2>
-                <canvas id="myChartNitrogen" width="900" height="400"> </canvas>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="well">
+          
+           
+            <div class="col-sm-6">
+              <div class="well well-lg">
                 <h2>Phosphorus&nbsp;<small>(ฟอสฟอรัส)</small></h2>
                 <canvas id="myChartPhosphorus" width="900" height="400"> </canvas>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="well">
+            <div class="col-sm-6">
+              <div class="well well-lg">
                 <h2>Potassium&nbsp;<small>(โพแทสเซียม)</small></h2>
                 <canvas id="myChartPotassium" width="900" height="400"> </canvas>
               </div>
             </div>
-          </div>
+          
           
           </div>
         </div>

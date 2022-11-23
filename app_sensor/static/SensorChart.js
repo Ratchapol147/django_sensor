@@ -6,8 +6,9 @@ const SensorFetch = async () => {
   const title = document?.getElementById("TitleDate");
   const currDate = new Date();
   const data = await fetch(
-    `https://api.thingspeak.com/channels/${channel}/feed.json?results=10`
+    `https://api.thingspeak.com/channels/${channel}/feed.json?results=1`
   ).then((x) => x.json());
+  
   const feed = {
     temp: data.feeds.map((x) => x.field1),
     humid: data.feeds.map((x) => x.field2),
@@ -19,8 +20,10 @@ const SensorFetch = async () => {
     time: data.feeds.map((x) => {
       const time = new Date(x.created_at);
       return `${time.getHours()}:${time.getMinutes()}`;
+
     }),
   };
+
   title.innerText = `ข้อมูลล่าสุดเมื่อ ${new Date(
     data.feeds.at(-1).created_at
   ).toLocaleString("th-TH")}`;
@@ -57,206 +60,395 @@ let myChartPhosphorus;
 let myChartPotassium;
 
 if (channel) {
+//GaugeChartText
+
+//bar
   myChartTemperature = new Chart(
     document.getElementById("myChartTemperature"),
     {
-      type: "line",
+      type: "bar",
       data: {
         labels: [],
         datasets: [
           {
-            label: "Celsius",
+            // label: false,
             data: [],
-            backgroundColor: ["rgb(72, 117, 198)"],
-            borderColor: ["rgb(72, 117, 198)"],
-            borderWidth: 2,
+            backgroundColor: ["rgb(221, 62, 62)"],
+            borderColor: ["rgb(221, 62, 62)"],
+            borderWidth: 1,
             tension: 0.1,
+            // borderSkipped:false,
+            borderRadius:5,
+            barPercentage:0.1,
+            categoryPercentage:0.8,
           },
         ],
       },
       options: {
-        responsive: true,
-        interaction: {
-          intersect: false,
+       indexAxis:'x',
+       Plugin:{
+        legend:{
+          display:false,
         },
+       },
         scales: {
+          x: {
+            beginAtZero: true,
+            grid:{
+              display:false,
+              drawBorder:false,
+            },
+            ticks:{
+              display:false,
+            }
+            
+          },
           y: {
             beginAtZero: true,
-            
+            grid:{
+              // display:false,
+              drawBorder:false,
+            },
+            // ticks:{
+            //   display:false,
+            // }
+          
           },
         },
       },
-    }
+    },
+    
   );
 
   myChartHumidity = new Chart(document.getElementById("myChartHumidity"), {
-    type: "line",
+    type: "bar",
     data: {
       labels: [],
       datasets: [
         {
           label: "UnitHumidity",
           data: [],
-          backgroundColor: ["rgb(92, 171, 189)"],
-          borderColor: ["rgb(92, 171, 189)"],
+          // backgroundColor: ["rgb(72, 117, 198)"],
+          borderColor: ["rgb(72, 117, 198)"],
           borderWidth: 1,
-          tension: 0.1,
+          // tension: 0.1,
+          borderSkipped:false,
+          borderRadius:5,
+          barPercentage:0.3,
+          // categoryPercentage:0.8,
         },
       ],
     },
     options: {
-      responsive: true,
-      interaction: {
-        intersect: false,
+     indexAxis:'y',
+     Plugin:{
+      legend:{
+        display:false,
       },
+     },
       scales: {
+        x: {
+          beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          // ticks:{
+          //   display:false,
+          // }
+          
+        },
         y: {
           beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          ticks:{
+            display:false,
+          }
+          
         },
       },
     },
-  });
+  },
+  
+);
 
   myChartEC = new Chart(document.getElementById("myChartEC"), {
-    type: "line",
+    type: "bar",
     data: {
       labels: [],
       datasets: [
         {
           label: "UnitEC",
           data: [],
-          backgroundColor: ["rgb(76, 197, 177)"],
-          borderColor: ["rgb(76, 197, 177)"],
+          // backgroundColor: ["rgb(72, 117, 198)"],
+          borderColor: ["rgb(72, 117, 198)"],
           borderWidth: 1,
-          tension: 0.1,
+          // tension: 0.1,
+          borderSkipped:false,
+          borderRadius:5,
+          barPercentage:0.3,
+          // categoryPercentage:0.8,
         },
       ],
     },
     options: {
-      responsive: true,
-      interaction: {
-        intersect: false,
+     indexAxis:'y',
+     Plugin:{
+      legend:{
+        display:false,
       },
+     },
       scales: {
+        x: {
+          beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          // ticks:{
+          //   display:false,
+          // }
+          
+        },
         y: {
           beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          ticks:{
+            display:false,
+          }
+          
         },
       },
     },
-  });
+  },
+  
+);
 
   myChartPH = new Chart(document.getElementById("myChartPH"), {
-    type: "line",
+    type: "bar",
     data: {
       labels: [],
       datasets: [
         {
           label: "UnitEC",
           data: [],
-          backgroundColor: ["rgb(247, 187, 90)"],
-          borderColor: ["rgb(247, 187, 90)"],
+          // backgroundColor: ["rgb(72, 117, 198)"],
+          borderColor: ["rgb(72, 117, 198)"],
           borderWidth: 1,
-          tension: 0.1,
+          // tension: 0.1,
+          borderSkipped:false,
+          borderRadius:5,
+          barPercentage:0.3,
+          // categoryPercentage:0.8,
         },
       ],
     },
     options: {
-      responsive: true,
-      interaction: {
-        intersect: false,
+     indexAxis:'y',
+     Plugin:{
+      legend:{
+        display:false,
       },
-
+     },
       scales: {
+        x: {
+          beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          // ticks:{
+          //   display:false,
+          // }
+          
+        },
         y: {
           beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          ticks:{
+            display:false,
+          }
+          
         },
       },
     },
-  });
+  },
+  
+);
 
   myChartNitrogen = new Chart(document.getElementById("myChartNitrogen"), {
-    type: "line",
+    type: "bar",
     data: {
       labels: [],
       datasets: [
         {
           label: "UnitNitrogen",
           data: [],
-          backgroundColor: ["rgb(243, 126, 98)"],
-          borderColor: ["rgb(243, 126, 98)"],
+          // backgroundColor: ["rgb(72, 117, 198)"],
+          borderColor: ["rgb(72, 117, 198)"],
           borderWidth: 1,
-          tension: 0.1,
+          // tension: 0.1,
+          borderSkipped:false,
+          borderRadius:5,
+          barPercentage:0.3,
+          // categoryPercentage:0.8,
         },
       ],
     },
     options: {
-      responsive: true,
-      interaction: {
-        intersect: false,
+     indexAxis:'y',
+     Plugin:{
+      legend:{
+        display:false,
       },
+     },
       scales: {
+        x: {
+          beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          // ticks:{
+          //   display:false,
+          // }
+          
+        },
         y: {
           beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          ticks:{
+            display:false,
+          }
+          
         },
       },
     },
-  });
+  },
+  
+);
 
   myChartPhosphorus = new Chart(document.getElementById("myChartPhosphorus"), {
-    type: "line",
+    type: "bar",
     data: {
       labels: [],
       datasets: [
         {
           label: "UnitPhosphorus",
           data: [],
-          backgroundColor: ["rgb(115, 138, 200)"],
-          borderColor: ["rgb(115, 138, 200)"],
+          // backgroundColor: ["rgb(72, 117, 198)"],
+          borderColor: ["rgb(72, 117, 198)"],
           borderWidth: 1,
-          tension: 0.1,
+          // tension: 0.1,
+          borderSkipped:false,
+          borderRadius:5,
+          barPercentage:0.3,
+          // categoryPercentage:0.8,
         },
       ],
     },
     options: {
-      responsive: true,
-      interaction: {
-        intersect: false,
+     indexAxis:'y',
+     Plugin:{
+      legend:{
+        display:false,
       },
+     },
       scales: {
+        x: {
+          beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          // ticks:{
+          //   display:false,
+          // }
+          
+        },
         y: {
           beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          ticks:{
+            display:false,
+          }
+          
         },
       },
     },
-  });
+  },
+  
+);
 
   myChartPotassium = new Chart(document.getElementById("myChartPotassium"), {
-    type: "line",
+    type: "bar",
     data: {
       labels: [],
       datasets: [
         {
           label: "UnitPotassium",
           data: [],
-          backgroundColor: ["rgb(127, 209, 59)"],
-          borderColor: ["rgb(127, 209, 59)"],
+          // backgroundColor: ["rgb(72, 117, 198)"],
+          borderColor: ["rgb(72, 117, 198)"],
           borderWidth: 1,
-          tension: 0.1,
+          // tension: 0.1,
+          borderSkipped:false,
+          borderRadius:5,
+          barPercentage:0.3,
+          // categoryPercentage:0.8,
         },
       ],
     },
     options: {
-      responsive: true,
-      interaction: {
-        intersect: false,
+     indexAxis:'y',
+     Plugin:{
+      legend:{
+        display:false,
       },
+     },
       scales: {
+        x: {
+          beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          // ticks:{
+          //   display:false,
+          // }
+          
+        },
         y: {
           beginAtZero: true,
+          grid:{
+            display:false,
+            drawBorder:false,
+          },
+          ticks:{
+            display:false,
+          }
+          
         },
       },
     },
-  });
+  },
+  
+);
   SensorFetch();
   setInterval(SensorFetch, 30 * 1000);
 }

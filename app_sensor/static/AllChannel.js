@@ -35,7 +35,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartTemperature"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -68,7 +68,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartHumidity"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -101,7 +101,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartEC"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -127,7 +127,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartPH"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -160,7 +160,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartNitrogen"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -193,7 +193,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartPhosphorus"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -226,7 +226,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartPotassium"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
