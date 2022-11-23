@@ -13,7 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-  <script defer type="module" src="{% static 'SensorChart.js' %}"></script>
+  <script defer type="module" src="{% static 'sensorChart.js' %}"></script>
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
@@ -23,13 +23,13 @@
     <style>
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
         .row.content {
-          height: 550px;
+          height: 650px;
         }
   
         /* Set gray background color and 100% height */
         .sidenav {
           background-color: #222222;
-          height: 250%;
+          height: 300%;
         }
   
         /* On small screens, set height to 'auto' for the grid */
@@ -58,12 +58,12 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="https://see.fontimg.com/api/renderfont4/0v5X/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjRkJGNUVGIiwiYmdjIjoiIzJEMzMzMyIsInQiOjF9/U2Vuc29yIElPVA/ferro-rosso.png" width="100%" height="100%"></a>
+            <a class="navbar-brand" href="#"><img src="https://see.fontimg.com/api/renderfont4/0v5X/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjRkJGNUVGIiwiYmdjIjoiIzJEMzMzMyIsInQiOjF9/U2Vuc29yIElPVA/ferro-rosso.png" width="auto" height="90%"></a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li><a href="{% url 'fertilizer' %}"><font size="3px" color="#b8babc"><i class="bi bi-bucket-fill">&nbsp;ถังปุ๋ย</font></i></a></li>
-              <li><a href="{% url 'Dashboardplant' %}"><font size="3px" color="#b8babc"><i class="bi bi-bar-chart-line-fill">&nbsp;สถิติโรงเรือน</font></i></a></li>
+              <li><a href="{% url 'fertilizer' %}"><font size="3px" color="#b8babc"><i class="bi bi-bucket-fill">&nbsp;Septic tank</font></i></a></li>
+              <li><a href="{% url 'Dashboardplant' %}"><font size="3px" color="#b8babc"><i class="bi bi-bar-chart-line-fill">&nbsp;Housing statistics</font></i></a></li>
               <li class="nav-header"><font color="#EDEDED"><b>&nbsp;HOUSING</b></font></li>
               <li><a href="{% url 'plant1' %}"><font color="#b8babc"><i class="bi bi-house-fill">&nbsp;Housing 1</font></i></a></li>
               <li><a href="{% url 'plant2' %}"><font color="#b8babc"><i class="bi bi-house-fill">&nbsp;Housing 2</font></i></a></li>
@@ -78,14 +78,14 @@
       <div class="container-fluid">
         <div class="row content">
           <div class="col-sm-2 sidenav hidden-xs">
-            <div class="row"><br>
+            <div class="row">
             <a class="navbar-brand" href="#"><img src="https://see.fontimg.com/api/renderfont4/0v5X/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjRkJGNUVGIiwiYmdjIjoiIzJEMzMzMyIsInQiOjF9/U2Vuc29yIElPVA/ferro-rosso.png" width="120%" height="120%"></a>
             
             </div>
             <ul class="nav nav-pills nav-stacked">
-              <li><a href="{% url 'fertilizer' %}"><font size="3px" color="#b8babc"><i class="bi bi-bucket-fill">&nbsp;ถังปุ๋ย</font></i></a></li>
-              <li><a href="{% url 'Dashboardplant' %}"><font size="3px" color="#b8babc"><i class="bi bi-bar-chart-line-fill">&nbsp;สถิติโรงเรือน</font></i></a></li>
-              <li class="nav-header"><font size="3px" color="#EDEDED"><b>HOUSING</b></font></li>
+              <li><a href="{% url 'fertilizer' %}"><font size="3px" color="#b8babc"><i class="bi bi-bucket-fill">&nbsp;Septic tank</font></i></a></li>
+              <li><a href="{% url 'Dashboardplant' %}"><font size="3px" color="#b8babc"><i class="bi bi-bar-chart-line-fill">&nbsp;Housing statistics</font></i></a></li>
+              <li class="nav-header"><font size="5px" color="#EDEDED"><b>HOUSING</b></font></li>
               <li><a href="{% url 'plant1' %}"><font size="3px" color="#b8babc"><i class="bi bi-house-fill">&nbsp;Housing 1</font></i></a></li>
               <li><a href="{% url 'plant2' %}"><font size="3px" color="#b8babc"><i class="bi bi-house-fill">&nbsp;Housing 2</font></i></a></li>
               <li><a href="{% url 'plant3' %}"><font size="3px" color="#b8babc"><i class="bi bi-house-fill">&nbsp;Housing 3</font></i></a></li>

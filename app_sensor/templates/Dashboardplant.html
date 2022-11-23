@@ -2,66 +2,69 @@
 {% block title %}plant1{% endblock %}
 {% load static %}
 {% block body %}
-        <script defer type="module" src="{% static 'AllChannel.js' %}"></script>
+
+        <script defer type="module" src="{% static 'allChannel.js' %}"></script>
         <div class="col-sm-9">
           <div class="row">
           <div class="col-sm-12">
           <div class="well">
-            <h1>ถังปุ๋ย</h1>
+            <h1>สถิติโรงเรือน</h1>
             <h1 id="TitleDate"></h1>
           </div>
         </div>
           </div>
+        
           <div class="row">
             <div class="col-sm-12">
               <div class="well">
-                <h4>Temperature</h4>
+                <h2>Temperature&nbsp;<small>(อุณหภูมิ)</small></h2>
                 <!-- <p>up date : {{ data_TTTT }}</p>
             {{ Temperature }}
             {{Temperature_time|safe}} -->
 
-                <canvas id="myChartTemperature" width="900" height="200">
+                <canvas id="myChartTemperature" width="900" height="400">
                 </canvas>
               </div>
             </div>
           </div>
+        
             <div class="row">
             <div class="col-sm-12">
               <div class="well">
-                <h4>Humidity</h4>
-                <canvas id="myChartHumidity" width="900" height="200"> </canvas>
+                <h2>Humidity&nbsp;<small>(ความชื้น)</small></h2>
+                <canvas id="myChartHumidity" width="900" height="400"> </canvas>
               </div>
             </div>
             <div class="col-sm-12">
               <div class="well">
-                <h4>EC</h4>
-                <canvas id="myChartEC" width="900" height="200"> </canvas>
+                <h2>EC&nbsp;<small>(การนำไฟฟ้า)</small></h2>
+                <canvas id="myChartEC" width="900" height="400"> </canvas>
               </div>
             </div>
             <div class="col-sm-12">
               <div class="well">
-                <h4>PH</h4>
-                <canvas id="myChartPH" width="900" height="200"> </canvas>
+                <h2>PH&nbsp;<small>(กรด-ด่าง)</small></h2>
+                <canvas id="myChartPH" width="900" height="400"> </canvas>
               </div>
             </div>
             </div>
             <div class="row">
             <div class="col-sm-12">
               <div class="well">
-                <h4>Nitrogen</h4>
-                <canvas id="myChartNitrogen" width="900" height="200"> </canvas>
+                <h2>Nitrogen&nbsp;<small>(ไนโตรเจน)</small></h2>
+                <canvas id="myChartNitrogen" width="900" height="400"> </canvas>
               </div>
             </div>
             <div class="col-sm-12">
               <div class="well">
-                <h4>Phosphorus</h4>
-                <canvas id="myChartPhosphorus" width="900" height="200"> </canvas>
+                <h2>Phosphorus&nbsp;<small>(ฟอสฟอรัส)</small></h2>
+                <canvas id="myChartPhosphorus" width="900" height="400"> </canvas>
               </div>
             </div>
             <div class="col-sm-12">
               <div class="well">
-                <h4>Potassium</h4>
-                <canvas id="myChartPotassium" width="900" height="200"> </canvas>
+                <h2>Potassium&nbsp;<small>(โพแทสเซียม)</small></h2>
+                <canvas id="myChartPotassium" width="900" height="400"> </canvas>
               </div>
             </div>
           </div>

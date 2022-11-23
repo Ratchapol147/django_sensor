@@ -11,7 +11,7 @@ const setup = async () => {
     )
   );
   console.log(lists);
-  const Labels = ["Housing 1", "Housing 2", "Housing 3", "Housing 4", "Housing 5"];
+  const Labels = ["House 1", "House 2", "House 3", "House 4", "House 5"];
   const TimeLable = lists[0].feeds.map((x) => {
     const time = new Date(x.created_at);
     return `${time.getHours()}:${time.getMinutes()}`;

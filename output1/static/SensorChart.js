@@ -6,7 +6,7 @@ const SensorFetch = async () => {
   const title = document?.getElementById("TitleDate");
   const currDate = new Date();
   const data = await fetch(
-    `https://api.thingspeak.com/channels/${channel}/feed.json?results=10`
+    `https://api.thingspeak.com/channels/${channel}/feed.json?results=30`
   ).then((x) => x.json());
   const feed = {
     temp: data.feeds.map((x) => x.field1),
@@ -67,8 +67,8 @@ if (channel) {
           {
             label: "Celsius",
             data: [],
-            backgroundColor: ["rgb(72, 117, 198)"],
-            borderColor: ["rgb(72, 117, 198)"],
+            backgroundColor: ["rgb(32, 42, 175)"],
+            borderColor: ["rgb(32, 42, 175)"],
             borderWidth: 2,
             tension: 0.1,
           },
@@ -82,7 +82,6 @@ if (channel) {
         scales: {
           y: {
             beginAtZero: true,
-            
           },
         },
       },
@@ -97,8 +96,8 @@ if (channel) {
         {
           label: "UnitHumidity",
           data: [],
-          backgroundColor: ["rgb(92, 171, 189)"],
-          borderColor: ["rgb(92, 171, 189)"],
+          backgroundColor: ["rgb(71, 214, 165)"],
+          borderColor: ["rgb(71, 214, 165)"],
           borderWidth: 1,
           tension: 0.1,
         },
@@ -125,8 +124,8 @@ if (channel) {
         {
           label: "UnitEC",
           data: [],
-          backgroundColor: ["rgb(76, 197, 177)"],
-          borderColor: ["rgb(76, 197, 177)"],
+          backgroundColor: ["rgba(255, 0, 0, 1)"],
+          borderColor: ["rgba(255, 0, 0, 1)"],
           borderWidth: 1,
           tension: 0.1,
         },
@@ -153,8 +152,8 @@ if (channel) {
         {
           label: "UnitEC",
           data: [],
-          backgroundColor: ["rgb(247, 187, 90)"],
-          borderColor: ["rgb(247, 187, 90)"],
+          backgroundColor: ["rgba(255, 0, 0, 1)"],
+          borderColor: ["rgba(255, 0, 0, 1)"],
           borderWidth: 1,
           tension: 0.1,
         },
@@ -182,8 +181,8 @@ if (channel) {
         {
           label: "UnitNitrogen",
           data: [],
-          backgroundColor: ["rgb(243, 126, 98)"],
-          borderColor: ["rgb(243, 126, 98)"],
+          backgroundColor: ["rgba(255, 0, 0, 1)"],
+          borderColor: ["rgba(255, 0, 0, 1)"],
           borderWidth: 1,
           tension: 0.1,
         },
@@ -210,8 +209,8 @@ if (channel) {
         {
           label: "UnitPhosphorus",
           data: [],
-          backgroundColor: ["rgb(115, 138, 200)"],
-          borderColor: ["rgb(115, 138, 200)"],
+          backgroundColor: ["rgba(255, 0, 0, 1)"],
+          borderColor: ["rgba(255, 0, 0, 1)"],
           borderWidth: 1,
           tension: 0.1,
         },
@@ -238,8 +237,8 @@ if (channel) {
         {
           label: "UnitPotassium",
           data: [],
-          backgroundColor: ["rgb(127, 209, 59)"],
-          borderColor: ["rgb(127, 209, 59)"],
+          backgroundColor: ["rgba(255, 0, 0, 1)"],
+          borderColor: ["rgba(255, 0, 0, 1)"],
           borderWidth: 1,
           tension: 0.1,
         },

@@ -2,7 +2,7 @@ const AllChannel = JSON.parse(
   document.getElementById("data")?.textContent
 )?.AllChannel;
 const url = (id) =>
-  `https://api.thingspeak.com/channels/${id}/feed.json?results=5`;
+  `https://api.thingspeak.com/channels/${id}/feed.json?results=20`;
 
 const setup = async () => {
   const lists = await Promise.all(
@@ -11,7 +11,7 @@ const setup = async () => {
     )
   );
   console.log(lists);
-  const Labels = ["Housing 1", "Housing 2", "Housing 3", "Housing 4", "Housing 5"];
+  const Labels = ["House 1", "House 2", "House 3", "House 4", "House 5"];
   const TimeLable = lists[0].feeds.map((x) => {
     const time = new Date(x.created_at);
     return `${time.getHours()}:${time.getMinutes()}`;
@@ -25,17 +25,17 @@ const setup = async () => {
   const potass = lists.map((x) => x.feeds.map((x) => x.field7));
 
   const colors = [
-    "rgb(243, 126, 98)",
-    "rgb(247, 187, 90)",
-    "rgb(255, 225, 119)",
-    "rgb(76, 197, 177)",
-    "rgb(92, 171, 189)",
+    "rgba(64, 13, 8, 0.6)",
+    "rgba(49, 225, 247, 0.6)",
+    "rgba(255, 0, 166, 0.6)",
+    "rgba(139, 211, 70, 0.6)",
+    "rgba(255, 119, 119, 0.6)",
   ];
 
   new Chart(
     document.getElementById("myChartTemperature"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -68,7 +68,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartHumidity"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -101,7 +101,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartEC"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -127,7 +127,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartPH"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -160,7 +160,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartNitrogen"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -193,7 +193,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartPhosphorus"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
@@ -226,7 +226,7 @@ const setup = async () => {
   new Chart(
     document.getElementById("myChartPotassium"),
     {
-      type: "bar",
+      type: "line",
       data: {
         labels: TimeLable,
         datasets: Labels.map((x, i) => ({
